@@ -8,7 +8,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute.js");
-
+const firebaseRoute = require("./routes/fireBasegoogleauthroute");
 
 
 
@@ -32,6 +32,7 @@ app.get("/app", (req, res) => {
  
 app.use("/app", userRoute);
 app.use("/app/admin", adminRoute);
+app.use("/app", firebaseRoute);
 app.get("/app/dashboard", (req, res) => {
  res.send('Dashboard Page')
 });
